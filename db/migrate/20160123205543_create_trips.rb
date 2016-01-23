@@ -1,7 +1,8 @@
 class CreateTrips < ActiveRecord::Migration
   def change
     create_table :trips do |t|
-      t.datetime :date
+      t.references :user, null: false
+      t.datetime :date, null: false
 
       t.timestamps null: false
     end
