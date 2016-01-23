@@ -1,7 +1,43 @@
-# This file should contain all the record creation needed to seed the database with its default values.
-# The data can then be loaded with the rake db:seed (or created alongside the db with db:setup).
-#
-# Examples:
-#
-#   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
-#   Mayor.create(name: 'Emanuel', city: cities.first)
+# create a new test user
+low_intensity = User.create(email: "test@test.com", password: "password")
+
+# create a trip for now
+low_intensity.trips.create(date: Time.now)
+
+# add breakfast, lunch, and dinner to this new trip
+low_intensity.trips.first.trip_events.create(event_type: "breakfast", place_id: "ChIJKye2O32AhYARG37tXAsOj7Q")
+low_intensity.trips.first.trip_events.create(event_type: "lunch", place_id: "ChIJSToWqn2AhYAR1CuH2iGMvuo")
+low_intensity.trips.first.trip_events.create(event_type: "dinner", place_id: "ChIJaZ6Hg4iAhYARrwVEfkv9Zlw")
+
+# add after breakfast event
+low_intensity.trips.first.trip_events.create(event_type: "park", place_id: "ChIJiZyN7IeAhYARfJshHJaQckc")
+
+# add after lunch event
+low_intensity.trips.first.trip_events.create(event_type: "museum", place_id: "ChIJ53I1Yn2AhYAR_Vl1vNygfM")
+
+# add after dinner event
+low_intensity.trips.first.trip_events.create(event_type: "movie", place_id: "ChIJ-zhtDYeAhYAREh_HF8J91xQ")
+
+# ===========================
+
+high_intensity = User.create(email: "test2@test.com", password: "password")
+
+# create a hith entensity trip for now
+high_intensity.trips.create(date: Time.now)
+
+# add breakfast, lunch, and dinner to this new trip
+high_intensity.trips.first.trip_events.create(event_type: "breakfast", place_id: "ChIJF7AFf-SAhYARJPDwj0CBm14")
+high_intensity.trips.first.trip_events.create(event_type: "lunch", place_id: "ChIJZTCRmjyHhYAR1aeqChJLjng")
+high_intensity.trips.first.trip_events.create(event_type: "dinner", place_id: "ChIJHSGzi_yAhYARptfivXk-Qlo")
+
+# add after breakfast events
+high_intensity.trips.first.trip_events.create(event_type: "park", place_id: "ChIJQ09tqOGAhYARinfjX2EOfaM")
+high_intensity.trips.first.trip_events.create(event_type: "landmark", place_id: "ChIJvXl2weCAhYARjSxnhzrBfNc")
+
+# add after lunch events
+high_intensity.trips.first.trip_events.create(event_type: "museum", place_id: "ChIJIUT7rEOHhYARucp3wM")
+high_intensity.trips.first.trip_events.create(event_type: "park", place_id: "ChIJW5w2V2iHhYARQoOl_ZsQlOg")
+
+# add after dinner events
+high_intensity.trips.first.trip_events.create(event_type: "park", place_id: "ChIJHSGzi_yAhYARnrPmDWAx9ro")
+high_intensity.trips.first.trip_events.create(event_type: "landmark", place_id: "ChIJAQAAQIyAhYARRN3yIQG4hd4")
