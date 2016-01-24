@@ -1,0 +1,19 @@
+<div class="col-sm-12 col-md-8">
+  views/trips/_place.html.erb: This view will show the individual event details (several times) on the trip index page.
+  <div class="thumbnail">
+    <% if @place.image %>
+    <img src="<%= @place.image %>">
+    <% end %>
+    <div class="caption">
+      <h3><%= @place.name %></h3>
+      <p>address</p>
+      <% if @place.open %>
+      <p>Open now</p>
+      <% else %>
+      <p>Closed</p>
+      <% end %>
+      <p>Price: </p>
+      <p>Website: <a href="<%= @place.website %>"><%= @place.website %></a></p>
+    </div>
+  </div>
+</div>
