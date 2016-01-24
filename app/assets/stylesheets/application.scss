@@ -74,12 +74,27 @@ header {
 
 .oleoscript{
   font-family: 'Oleo Script', cursive;
-  font-size: 54px;
+  font-size: 90px;
+}
+
+.poiret{
+  font-size: 50px;
+  font-family: 'Poiret One', cursive;
+}
+
+header {
+  margin-top: 20%;
   color:white;
 }
 
 .row {
   width:100%;
+}
+
+@media only screen and (min-width: 768px) {
+  .selection{
+  margin-left: 40%;
+}
 }
 /*form {
   border: 1px solid orange;

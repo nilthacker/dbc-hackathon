@@ -24,9 +24,9 @@ $( document ).ready(function() {
 });
 
 var bindFormListeners = function(){
-  $('.form-wrapper').on('click', "button", function(e){
+  $('form').on('click', "button", function(e){
     e.preventDefault();
-    var nextDiv = $('.form-wrapper .hidden').eq(formElement);
+    var nextDiv = $('form .hidden').eq(formElement);
     formElement += 1;
     nextDiv.removeClass('hidden');
     $(this).parent().addClass('hidden');
