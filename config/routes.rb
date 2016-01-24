@@ -8,6 +8,7 @@ Rails.application.routes.draw do
 
   post '/trips' => 'trips#create'
   get '/trips' => 'trips#index'
+  get '/trips/:trip_id' => 'trips#show'
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'

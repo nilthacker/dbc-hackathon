@@ -27,6 +27,9 @@ ActiveRecord::Schema.define(version: 20160123205733) do
   create_table "trips", force: :cascade do |t|
     t.integer  "user_id",    null: false
     t.datetime "date",       null: false
+    t.string   "cost",       null: false
+    t.string   "category",   null: false
+    t.string   "intensity",  null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

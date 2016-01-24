@@ -6,7 +6,6 @@
   </center>
 </header>
 <div class="container">
-
     <div class="form-inline">
       <form id="sfmax">
         <div class="selection">
@@ -19,9 +18,9 @@
         </div>
         <div class="selection hidden">
           <select id= "intensity" name="intensity" form="sfmax" class="form-control">
-            <option value="low">Gentle</option>
-            <option value="medium">Moderate</option>
-            <option value="high">Intense</option>
+              <option value="low">Gentle</option>
+              <option value="medium">Moderate</option>
+              <option value="high">Intense</option>
           </select>
           <button class="submit btn btn-primary" type="button">Next</button>
         </div>
@@ -35,5 +34,14 @@
         </div>
       </form>
     </div>
-
+</div>
+<div style="color: white">
+  <br><br><br>
+  <center>
+  <% if current_user %>
+  <% @trips.each do |trip| %>
+   <p><a href="/trips/<%= trip.id %>">Trip info</a></p>
+  <% end %>
+  <% end %>
+  </center>
 </div>

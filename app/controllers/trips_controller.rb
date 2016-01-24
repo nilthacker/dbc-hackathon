@@ -1,6 +1,14 @@
 class TripsController < ApplicationController
   def index
+    if current_user
+      @trips = current_user.trips
+    end
     # show the all the places/events and transit between them in the
+  end
+
+  def show
+    @trip = Trip.find(params[:trip_id])
+    @places = current_user.trips.find(params[:trip_id]).trip_events
   end
 
   def create
