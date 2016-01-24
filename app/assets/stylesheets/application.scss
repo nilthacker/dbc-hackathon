@@ -56,7 +56,9 @@ html, body {
   background-size: cover;
   position: relative;
 	height: 100%;
+  margin-top: 10%;
 }
+
 
 header {
   /*border: 1px solid pink;*/
@@ -83,7 +85,6 @@ header {
 }
 
 header {
-  margin-top: 20%;
   color:white;
 }
 
@@ -93,9 +94,24 @@ header {
 
 @media only screen and (min-width: 768px) {
   .selection{
-  margin-left: 40%;
+  margin-left: 25%;
+  }
 }
+
+
+
+.btn{
+    @media only screen and (min-width: 768px) {
+      width: 200px;
+    }
+    @media only screen and (max-width: 768px){
+    width:100%;
+    margin-top: 10px;
+    }
+
+
 }
+
 /*form {
   border: 1px solid orange;
 }*/
