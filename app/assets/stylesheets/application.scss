@@ -1,0 +1,86 @@
+
+@import "bootstrap-sprockets";
+@import "bootstrap";
+
+
+* {
+  -webkit-box-sizing: border-box;
+     -moz-box-sizing: border-box;
+      -ms-box-sizing: border-box;
+       -o-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-weight: normal;
+  margin: 0;
+}
+
+ul,
+li {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+p {
+  margin: 0;
+}
+
+a {
+	text-decoration: none;
+}
+
+img {
+	max-width: 100%;
+	height: auto;
+}
+
+/*--------------------------
+	Body/HTML
+	-------------------------*/
+html {
+
+}
+
+html, body {
+  background: url(asset-path('SF_4.png')) no-repeat center center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  position: relative;
+	height: 100%;
+}
+
+header {
+  /*border: 1px solid pink;*/
+  position: relative;
+  overflow: auto;
+}
+
+.signin {
+  float: right;
+}
+
+.title {
+  float: left;
+}
+
+.oleoscript{
+  font-family: 'Oleo Script', cursive;
+  font-size: 54px;
+  color:white;
+}
+
+.row {
+  width:100%;
+}
+/*form {
+  border: 1px solid orange;
+}*/

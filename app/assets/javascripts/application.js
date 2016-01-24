@@ -13,4 +13,23 @@
 //= require jquery
 //= require jquery_ujs
 //= require turbolinks
+//= require bootstrap-sprockets
 //= require_tree .
+
+  var formElement = 0;
+
+$( document ).ready(function() {
+  bindFormListeners();
+
+});
+
+var bindFormListeners = function(){
+  $('.form-wrapper').on('click', "button", function(e){
+    e.preventDefault();
+    var nextDiv = $('.form-wrapper .hidden').eq(formElement);
+    formElement += 1;
+    nextDiv.removeClass('hidden');
+    $(this).parent().addClass('hidden');
+    // $(this).hide();
+  });
+}
