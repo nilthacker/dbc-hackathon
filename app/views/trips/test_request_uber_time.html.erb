@@ -1,0 +1,14 @@
+<h1><%@client.inspect%></h1>
+<h1><%@time.each do |time_object| %>
+<%= time_object.display_name  %>:
+<%= time_object.estimate / 60 %>
+<br>
+<%end%>
+</h1>
+<h1><%@price.each do |price_object| %>
+<%= price_object.display_name  %>:
+<%= price_object.estimate%>
+<br>
+<%end%>
+</h1>
+<h1><%=@spot_loc[:latitude]%></h1>

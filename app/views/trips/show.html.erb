@@ -1,8 +1,19 @@
 <div class="container" style="color: white">
   <h2>Trip info page</h2>
   <p>Trip on: <%= @trip.date.strftime("%B %d, %Y") %></p>
-  <% @places.each do |place| %>
+  <% @places.each_with_index do |place, i| %>
     <% place_info = get_place_info(place.place_id) %>
-    <%= render partial: 'trips/place', locals: {place_info: place_info} %>
-  <% end %>
+    <%if i % 2 == 0%>
+  <%if i < @places.length-1%>
+ <% @start_loc = get_place_location(@places[i].place_id) %>
+    <% @end_loc = get_place_location(@places[i+1].place_id) %>
+    <%@time = @uclient.time_estimations(start_latitude: @start_loc[:latitude], start_longitude: @start_loc[:longitude], end_latitude: @end_loc[:latitude], end_longitude: @end_loc[:longitude])%>
+<%@price =  @uclient.price_estimations(start_latitude: @start_loc[:latitude], start_longitude: @start_loc[:longitude], end_latitude: @end_loc[:latitude], end_longitude: @end_loc[:longitude])%>
+<%time_label = @time[i].display_name%>:<% time_estimate = @time[i].estimate / 60 %>
+<%price_label = @price[i].display_name%>:<% price_estimate = @price[i].estimate%>
+  <%end%>
+  <%end%>
+    <%= render partial: 'trips/place', locals: {place_info: place_info, time_label: time_label, price_label: price_label, time_estimate: time_estimate, price_estimate: price_estimate} %>
+<% end %>
 </div>
+

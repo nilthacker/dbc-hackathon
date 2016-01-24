@@ -33,6 +33,8 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 gem 'devise'
 gem 'google_places'
 
+gem 'uber-ruby', require: 'uber'
+
 # Use Unicorn as the app server
 # gem 'unicorn'
 
