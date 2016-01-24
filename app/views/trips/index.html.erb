@@ -40,7 +40,7 @@
   <center>
   <% if current_user %>
   <% @trips.each do |trip| %>
-   <p><a href="/trips/<%= trip.id %>">Trip info</a></p>
+   <p><a href="/trips/<%= trip.id %>">Trip on <%= trip.date.strftime("%B %d, %Y") %></a></p>
   <% end %>
   <% end %>
   </center>
