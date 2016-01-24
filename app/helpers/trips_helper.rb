@@ -1,12 +1,12 @@
 module TripsHelper
   def get_place_info(place_id)
-    @client = GooglePlaces::Client.new(ENV["GOOGLE_API_KEY"])
-    return @client.spot(place_id)
+    @client = GooglePlaces::Client.new(ENV["GOOGLE_PLACES_API"])
+    @client.spot(place_id)
   end
 
   #for api calls
   def get_place_location(place_id)
-    @client = GooglePlaces::Client.new(ENV["GOOGLE_API_KEY"])
+    @client = GooglePlaces::Client.new(ENV["GOOGLE_PLACES_API"])
     return { latitude: @client.spot(lat), longitude: @client.spot(lng) }
   end
 

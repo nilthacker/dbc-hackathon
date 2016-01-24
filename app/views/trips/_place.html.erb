@@ -1,20 +1,22 @@
 <div class="col-sm-12 col-md-8">
-  <% p @place %>
-  views/trips/_place.html.erb: This view will show the individual place details on the trip info page.
   <div class="thumbnail">
-    <% if @place %>
-    <img src="<%= @place %>">
+    <% if place_info %>
+    <img src="<%= place_info.photos[0].fetch_url(800) %>" width="300px" style="border-radius: 5%">
     <% end %>
     <div class="caption">
-      <h3><%= @place %></h3>
-      <p>address</p>
-      <% if @place %>
+      <h3><%= place_info.name %></h3>
+      <p><%= place_info.formatted_address %></p>
+      <% if place_info.opening_hours && place_info.opening_hours["open_now"] %>
       <p>Open now</p>
       <% else %>
       <p>Closed</p>
       <% end %>
-      <p>Price: </p>
-      <p>Website: <a href="<%= @place %>"><%= @place %></a></p>
+      <% if place_info.price_level %>
+      <p>Price: <%= "$" * place_info.price_level %></p>
+      <% else %>
+      <p>Price: variable</p>
+      <% end %>
+      <p>Website: <a href="<%= place_info.website %>"><%= place_info.website %></a></p>
     </div>
   </div>
 </div>

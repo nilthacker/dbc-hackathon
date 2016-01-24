@@ -3,6 +3,6 @@
   <p>Trip on: <%= @trip.date.strftime("%B %d, %Y") %></p>
   <% @places.each do |place| %>
     <% place_info = get_place_info(place.place_id) %>
-    <%= render partial: 'trips/place', locals: {place_info: @place} %>
+    <%= render partial: 'trips/place', locals: {place_info: place_info} %>
   <% end %>
 </div>
