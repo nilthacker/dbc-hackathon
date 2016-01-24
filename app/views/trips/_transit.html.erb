@@ -1,10 +1,3 @@
 <div class="transit-view-container">
-  <%@legs.each do |leg|%>
-  <%if @trip.cost = "high"%>
-  <span class="transit-type">Uber -- $<%=leg.price%> <%=leg.time%></span>
-  <%elsif @trip.cost = "medium"%>
-  <span class="transit-type">Bus/Muni -- $<%=leg.price%> <%=leg.time%></span>
-  <%else%>
-  <span class="transit-type">Walk -- $Free -- <%=leg.time%></span>
-  <%end%>
+
   </div>
