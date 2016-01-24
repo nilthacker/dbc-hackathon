@@ -3,7 +3,6 @@ class TripsController < ApplicationController
     if current_user
       @trips = current_user.trips
     end
-    # show the all the places/events and transit between them in the
   end
 
   def show
