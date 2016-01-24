@@ -2,7 +2,8 @@
 low_intensity = User.create(email: "test@test.com", password: "password")
 
 # create a trip for now
-low_intensity.trips.create(date: Time.now)
+# low intensity, landmarks, medium cost
+low_intensity.trips.create(date: Time.now, category: "landmarks", intensity: "low", cost: "medium")
 
 # add trip events
 low_intensity.trips.first.trip_events.create(event_type: "breakfast", place_id: "ChIJKye2O32AhYARG37tXAsOj7Q")
@@ -17,7 +18,8 @@ low_intensity.trips.first.trip_events.create(event_type: "culture", place_id: "C
 high_intensity = User.create(email: "test2@test.com", password: "password")
 
 # create a hith entensity trip for now
-high_intensity.trips.create(date: Time.now)
+# high intensity, landmark, splurge
+high_intensity.trips.create(date: Time.now, category: "landmarks", intensity: "high", cost: "splurge")
 
 # add trip events
 high_intensity.trips.first.trip_events.create(event_type: "breakfast", place_id: "ChIJF7AFf-SAhYARJPDwj0CBm14")
